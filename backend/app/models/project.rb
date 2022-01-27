@@ -4,7 +4,7 @@ class Project < ApplicationRecord
     has_many :logs
 
     def dateline
-        dateline = self.created_at.strftime('%A, %B %B, %Y')
+        dateline = self.created_at.strftime('%B %d, %Y')
     end
 
 end
