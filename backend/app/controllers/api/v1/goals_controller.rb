@@ -1,7 +1,7 @@
 class Api::V1::GoalsController < ApplicationController
 
     def index
-        goals = Project.find_by(id: params[:id]).goals
+        goals = Goal.all
         render json: goals
     end
 

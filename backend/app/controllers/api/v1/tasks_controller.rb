@@ -1,6 +1,6 @@
 class Api::V1::TasksController < ApplicationController
     def index
-        tasks = Goal.find_by(id: params[:id]).tasks
+        tasks = Task.all
         render json: tasks
     end
 

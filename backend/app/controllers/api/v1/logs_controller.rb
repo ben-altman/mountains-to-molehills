@@ -1,6 +1,6 @@
 class Api::V1::LogsController < ApplicationController
     def index
-        logs = Project.find_by(id: params[:id]).logs
+        logs = Log.all
         render json: logs
     end
 
