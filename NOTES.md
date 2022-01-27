@@ -12,3 +12,22 @@ Your Rails API should handle the data persistence with a database. You should be
 Your client-side application should handle the display of data with minimal data manipulation
 Your application should have some minimal styling: feel free to stick to a framework (like react-bootstrap), but if you want to write (additional) CSS yourself, go for it!
 Once your app is complete, fill out this checklist.
+
+
+<!-- From app.js:
+<div className="App">
+        <header className="App-header">
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div> -->
