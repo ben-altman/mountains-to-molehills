@@ -8,12 +8,6 @@ import NavBar from './components/NavBar.js';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 class App extends React.Component {
-  
-
-  componentDidMount() {
-    this.props.fetchProjects();
-    // console.log(this.props.projects);
-  }
 
   render() {
     return (
@@ -30,17 +24,4 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    projects: state.projects,
-    // loading: state.loading
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchProjects: () => dispatch(fetchProjects()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

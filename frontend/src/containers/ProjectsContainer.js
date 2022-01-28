@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 export class ProjectsContainer extends Component {
-  render() {
-    return <div></div>;
-  }
+
+    componentDidMount() {
+        this.props.fetchProjects();
+        // console.log(this.props.projects);
+    }
+    
+    render() {
+        return <div></div>;
+    }
 }
 
 const mapStateToProps = (state) => {
