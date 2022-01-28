@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 export default function Home() {
-  return <div>
-        <h1>Mountains to Molehills</h1>
+  return <div className='card'>
         <p>Feeling overwhelmed about all the things you have to do?</p>
         <p>Don't panic, just get organized!</p>
         <NavLink to="/projects">

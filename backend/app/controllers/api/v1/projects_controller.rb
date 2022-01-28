@@ -1,6 +1,7 @@
 class Api::V1::ProjectsController < ApplicationController
 
     def index
+        byebug
         projects = Project.all
         render json: projects
     end
