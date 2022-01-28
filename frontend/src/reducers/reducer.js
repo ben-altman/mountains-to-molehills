@@ -5,8 +5,16 @@ const reducer = (state = {
     logs: []
 }, action) => {
     switch (action.type) {
+        case "LOAD_PROJECTS":
+            return {
+                ...state,
+                projects: [...state.projects],
+            };
+
         case "GET_PROJECTS":
-            return {...state, projects: action.payload}
+            // debugger;
+            return {...state, 
+            projects: action.payload }
         
         default: 
             return state
