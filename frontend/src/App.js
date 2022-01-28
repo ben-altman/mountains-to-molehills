@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { fetchProjects } from './actions/projectActions';
+import Home from './components/Home.js';
 
 class App extends React.Component {
   
@@ -15,7 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Mountains to Molehills</h1>
+          <Home />
         {console.log(this.props.projects)}
       </div>
     );
