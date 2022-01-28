@@ -4,21 +4,24 @@ import './App.css';
 import { connect } from 'react-redux';
 import { fetchProjects } from './actions/projectActions';
 import Home from './components/Home.js';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
   
 
   componentDidMount() {
     this.props.fetchProjects();
-    console.log(this.props.projects);
+    // console.log(this.props.projects);
   }
 
   render() {
     return (
-      <div>
-          <Home />
-        {console.log(this.props.projects)}
-      </div>
+      <Router>
+        <div>
+          <Route exact path="/" component={Home} />
+          {/* {console.log(this.props.projects)} */}
+        </div>
+      </Router>
     );
   }
 }
