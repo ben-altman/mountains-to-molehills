@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :projects
-      resources :logs
-      resources :goals do
-        resources :tasks
+      resources :projects do
+        resources :logs
+        resources :goals do
+          resources :tasks
+        end
       end
     end
   end

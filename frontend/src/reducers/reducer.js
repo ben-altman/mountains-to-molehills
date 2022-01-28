@@ -1,5 +1,12 @@
-const reducer = (state = [], action) => {
+const reducer = (state = {
+    projects: [],
+    goals: [],
+    tasks: [],
+    logs: []
+}, action) => {
     switch (action.type) {
+        case "GET_PROJECTS":
+            return {...state, projects: action.payload}
         
         default: 
             return state
