@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const ProjectShow = (props) => {
-  return <div className='card'>
-      <h2>{props.title}</h2>
-      <ul>
+export class ProjectShow extends Component {
+  
+  renderGoals = () => {
+    return this.props.project.goals.map((goal) => (
+    <div key={goal.id} className="card goal"><h3>{goal.description}</h3>
+      <ul>{goal.tasks.map(task => (<li key={task.id}><span>{task.description}</span></li>))}</ul>
+    </div>))
+  }
 
-      </ul>
+  render() {
+    const project = this.props.project
+    console.log("projectshow", project)
+  return <div className="center-card">
+      <h2>{project.title}</h2>
+      <div>
+        {this.renderGoals()}
+      </div>
   </div>;
+  }
 }
 
 export default ProjectShow;

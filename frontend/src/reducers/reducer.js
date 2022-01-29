@@ -12,13 +12,13 @@ const reducer = (state = {
             return {...state, 
             projects: action.payload }
 
-        case "GET_RESTAURANT":
-            debugger;
+        case "GET_PROJECT":
+            console.log(action)
             return {...state,
             selectedProject: action.payload }
 
         case "ADD_PROJECT":
-debugger;
+// debugger;
             return {...state,
                 projects: {...state.projects}
             }

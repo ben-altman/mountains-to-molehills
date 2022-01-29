@@ -26,11 +26,14 @@ export const addProject = (title) => {
 }
 
 export const getProject = (id) => {
+ 
     return (dispatch) => fetch(`http://localhost:3000/api/v1/projects/${id}`)
         .then(response => response.json())
-        .then(project => dispatch({type: "GET_PROJECT", payload: project })
+        .then(project => dispatch({type: "GET_PROJECT", payload: project })       
     );
 }
+
+// .then(project => dispatch({type: "GET_PROJECT", payload: project })
 
 // return (dispatch) => {
 //     dispatch({ type: 'LOAD_PROJECTS' });

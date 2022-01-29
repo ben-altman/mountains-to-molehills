@@ -16,7 +16,7 @@ class App extends React.Component {
             <div className='center-card'>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/projects/:id" component={SelectedProjectContainer} />
+              <Route path="/projects/:id" render={(routerProps) => <SelectedProjectContainer {...routerProps}/>} />
               <Route path="/projects" component={ProjectsContainer} />
             </Switch>
             </div>

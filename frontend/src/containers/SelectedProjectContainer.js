@@ -5,12 +5,17 @@ import { getProject } from '../actions/projectActions';
 
 export class ProjectsContainer extends Component {
 
+    
+
     componentDidMount() {
-        this.props.getProject();
+        console.log(this.props.match.params)
+        const id = this.props.match.params.id
+        this.props.getProject(id);
         // console.log(this.props.projects);
     }
 
     render() {
+        console.log("selected project:", this.props)
         return <div className='card'>
             <ProjectShow project={this.props.selectedProject} />
         </div>;
@@ -19,7 +24,7 @@ export class ProjectsContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        project: state.selectedProject,
+        selectedProject: state.selectedProject,
     }
 }
 
