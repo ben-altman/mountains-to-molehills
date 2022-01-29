@@ -3,4 +3,5 @@ class GoalSerializer < ActiveModel::Serializer
 
   belongs_to :project
   has_many :tasks
+
 end

@@ -5,9 +5,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :projects do
         resources :logs
-        resources :goals do
-          resources :tasks
-        end
+        resources :goals
+      end
+      resources :goals do
+        resources :tasks
       end
     end
   end
