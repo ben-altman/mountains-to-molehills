@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 // import ProjectsContainer from '../containers/ProjectsContainer';
 
 export default function Home() {
-  return <div className='card'>
+  return <div className='card center-card'>
         <p>Feeling overwhelmed about all the things you have to do?</p>
         <p>Don't panic, just get organized!</p>
         <NavLink to="/projects">
