@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProjectsIndex from '../components/ProjectsIndex';
 import ProjectsForm from '../components/ProjectsForm';
-import { fetchProjects } from '../actions/projectActions';
+import { fetchProjects, addProject } from '../actions/projectActions';
 
 export class ProjectsContainer extends Component {
 
