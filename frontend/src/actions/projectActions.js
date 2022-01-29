@@ -19,11 +19,14 @@ export const addProject = (title) => {
             })
         })
         .then((res) => res.json())
-        .then(formData => dispatch({
-            type: 'ADD_PROJECT', payload: formData
-        }))
+        // .then(formData => console.log(formData))
+        .then(formData => dispatch({type: "ADD_PROJECT", payload: formData}))
     }
 }
+
+// .then(formData => dispatch({
+//     type: 'ADD_PROJECT', payload: formData
+// }))
 
 export const getProject = (id) => {
  
@@ -33,7 +36,6 @@ export const getProject = (id) => {
     );
 }
 
-// .then(project => dispatch({type: "GET_PROJECT", payload: project })
 
 // return (dispatch) => {
 //     dispatch({ type: 'LOAD_PROJECTS' });

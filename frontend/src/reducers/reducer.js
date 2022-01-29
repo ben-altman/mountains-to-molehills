@@ -13,15 +13,17 @@ const reducer = (state = {
             projects: action.payload }
 
         case "GET_PROJECT":
-            console.log(action)
+            // console.log(action)
             return {...state,
             selectedProject: action.payload }
 
         case "ADD_PROJECT":
-// debugger;
+            console.log(action.payload)
             return {...state,
-                projects: {...state.projects}
+                projects: [...state.projects, action.payload ]
             }
+            // return Object.assign(projects, action.payload})
+            
 
         default: 
             return state

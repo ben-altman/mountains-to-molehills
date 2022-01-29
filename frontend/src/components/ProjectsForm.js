@@ -1,9 +1,13 @@
 // import React from 'react';
 import React, { Component } from 'react';
 
-export class ProjectsForm extends Component {
-    state = {
-        project: ''
+class ProjectsForm extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         project: ''
+      }
     }
 
     handleChange = event => {
@@ -12,11 +16,12 @@ export class ProjectsForm extends Component {
         })
     }
 
-    handleOnSubmit = event => {
+    handleOnSubmit = (event) => {
         event.preventDefault();
-        console.log("Project being added: ", this.state.project);
-        this.props.addProject(this.state);
-        this.setState({ project: '' }) 
+        this.props.addProject(this.state.project);
+        event.target.reset();
+        // Why didnt below work?
+        // this.setState({ project: '' })
       }
     
 
