@@ -7,7 +7,7 @@ class Api::V1::ProjectsController < ApplicationController
 
     def show
         project = Project.find(params[:id])
-        render json: project
+        render json: project, include: ['goals', 'goals.tasks', 'logs']
     end
 
     def create
