@@ -1,11 +1,8 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
-import { connect } from 'react-redux';
-import { fetchProjects } from './actions/projectActions';
 import Home from './components/Home.js';
 import NavBar from './components/NavBar.js';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends React.Component {
 
@@ -17,7 +14,7 @@ class App extends React.Component {
           <div className='center-card'>
             <Route exact path="/" component={Home} />
           </div>
-          {/* {console.log(this.props.projects)} */}
+          {console.log(this.props.projects)}
         </div>
       </Router>
     );

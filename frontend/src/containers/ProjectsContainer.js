@@ -1,29 +1,31 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import React, { Component } from 'react';
+// import { connect } from 'react-redux';
+// // import ProjectsIndex from '../components/ProjectsIndex';
+// import { fetchProjects } from '../actions/projectActions';
 
-export class ProjectsContainer extends Component {
+// export class ProjectsContainer extends Component {
 
-    componentDidMount() {
-        this.props.fetchProjects();
-        // console.log(this.props.projects);
-    }
-    
-    render() {
-        return <div></div>;
-    }
-}
+//     componentDidMount() {
+//         this.props.fetchProjects();
+//         // console.log(this.props.projects);
+//     }
 
-const mapStateToProps = (state) => {
-    return {
-        projects: state.projects,
-        // loading: state.loading
-    }
-}
+//     render() {
+//         return <div></div>;
+//     }
+// }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchProjects: () => dispatch(fetchProjects()),
-    };
-};
+// const mapStateToProps = (state) => {
+//     return {
+//         projects: state.projects,
+//         // loading: state.loading
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectsContainer);
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         fetchProjects: () => dispatch(fetchProjects()),
+//     };
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(ProjectsContainer);

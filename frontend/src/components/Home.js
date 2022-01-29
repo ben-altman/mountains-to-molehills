@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
+// import ProjectsContainer from '../containers/ProjectsContainer';
 
 export default function Home() {
   return <div className='card'>
@@ -8,7 +10,11 @@ export default function Home() {
         <NavLink to="/projects">
             <input type="button" value="Click Here to View or Start Projects"/>
         </NavLink>
+        {/* <Router>
+            <Switch>
+                <Route path="/projects" component={ProjectsContainer} />
+                <Route path="/" component={Home} />
+            </Switch>
+        </Router> */}
     </div>;
-
-
 }
