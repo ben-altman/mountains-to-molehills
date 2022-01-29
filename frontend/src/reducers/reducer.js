@@ -1,15 +1,27 @@
 const reducer = (state = {
     projects: [],
-    goals: [],
-    tasks: [],
+    selectedProject: {
+        // title: "",
+        // goals: [],
+        // logs: []
+    },
     logs: []
 }, action) => {
     switch (action.type) {
         case "GET_PROJECTS":
-            // debugger;
             return {...state, 
             projects: action.payload }
-        
+
+        case "GET_RESTAURANT":
+            debugger;
+            return {...state,
+            selectedProject: action.payload }
+
+        case "ADD_PROJECT":
+            debugger;
+            return {
+            }
+
         default: 
             return state
     }

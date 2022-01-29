@@ -13,7 +13,7 @@ export class ProjectsContainer extends Component {
 
     render() {
         return <div className='card'>
-            <ProjectsIndex projects={this.props.projects}/>
+            <ProjectsIndex projects={this.props.projects} getProject={this.props.getProject}/>
             <ProjectsForm addProject={this.props.addProject} />
         </div>;
     }
@@ -22,14 +22,13 @@ export class ProjectsContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         projects: state.projects,
-        // loading: state.loading
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchProjects: () => dispatch(fetchProjects()),
-        addProject: project => dispatch(addProject(project))
+        addProject: (project) => dispatch(addProject(project)),
     };
 };
 
