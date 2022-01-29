@@ -8,10 +8,28 @@ export const fetchProjects = () => {
     }
 }
 
-export const addProject = () => {
+export const addProject = (title) => {
     return (dispatch) => {
-        console.log(dispatch)
+        return fetch('http://localhost:3000/api/v1/projects', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ title: 'title',
+            })
+        })
+        .then((res) => res.json())
+        .then(project => dispatch({
+            type: 'ADD_PROJECT', payload: project
+        }))
     }
+}
+
+export const getProject = (id) => {
+    return (dispatch) => fetch(`http://localhost:3000/api/v1/projects/${id}`)
+        .then(response => response.json())
+        .then(project => dispatch({type: "GET_PROJECT", payload: project })
+    );
 }
 
 // return (dispatch) => {

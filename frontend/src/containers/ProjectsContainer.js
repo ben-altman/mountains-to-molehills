@@ -14,7 +14,7 @@ export class ProjectsContainer extends Component {
     render() {
         return <div className='card'>
             <ProjectsIndex projects={this.props.projects}/>
-            <ProjectsForm />
+            <ProjectsForm addProject={this.props.addProject} />
         </div>;
     }
 }
@@ -29,6 +29,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchProjects: () => dispatch(fetchProjects()),
+        addProject: project => dispatch(addProject(project))
     };
 };
 
