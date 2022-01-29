@@ -1,19 +1,33 @@
-import React from 'react';
+// import React from 'react';
+import React, { Component } from 'react';
 
-const ProjectsForm = (props) => {
+export class ProjectsForm extends Component {
+    state = {
+        project: ''
+    }
+
+    handleChange = event => {
+        this.setState({
+            project: event.target.value
+        })
+    }
+
+    handleOnSubmit = event => {
+        event.preventDefault();
+        console.log("Project being added: ", this.state.project);
+        this.props.addProject(this.state);
+        this.setState({ project: '' }) 
+      }
     
-    // handleInput = event => {
-    //     {console.log(event)}
-    // }
 
-    return (
-        <form handleInput={event=> props.addProject(event.target.value)}>
-            <label><b>Add a Project: </b>
-                <input type='text' name='title' />
-                <input type='submit' value='Create Project' />
-            </label>
-        </form>
-    )
+  render() {
+    return <form onSubmit={(event) => this.handleOnSubmit(event)}>
+        <label><b>Add a Project: </b>
+            <input type='text' onChange={ (event) => this.handleChange(event)} />
+            <input type='submit' value='Create Project' />
+        </label>
+    </form>;
+  }
 }
 
 export default ProjectsForm;

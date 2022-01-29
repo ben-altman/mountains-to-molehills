@@ -12,8 +12,9 @@ export class ProjectsContainer extends Component {
     }
 
     render() {
+        // debugger;
         return <div className='card'>
-            <ProjectsIndex projects={this.props.projects} getProject={this.props.getProject}/>
+            <ProjectsIndex projects={this.props.projects}/>
             <ProjectsForm addProject={this.props.addProject} />
         </div>;
     }

@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .header {
@@ -51,6 +51,7 @@
   border-radius: 10px;
   text-align: center;
   justify-content: center;
+  
 }
 
 h3 {

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const ProjectsIndex = (props) => {
-
+    
     return <div>
         <h2>Current Projects:</h2>
         {props.projects.map(project => (

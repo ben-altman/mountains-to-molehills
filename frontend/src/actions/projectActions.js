@@ -15,12 +15,12 @@ export const addProject = (title) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ title: 'title',
+            body: JSON.stringify({ title: title,
             })
         })
         .then((res) => res.json())
-        .then(project => dispatch({
-            type: 'ADD_PROJECT', payload: project
+        .then(formData => dispatch({
+            type: 'ADD_PROJECT', payload: formData
         }))
     }
 }

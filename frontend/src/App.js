@@ -15,7 +15,6 @@ class App extends React.Component {
             <NavBar />
             <div className='center-card'>
             <Switch>
-
               <Route exact path="/" component={Home} />
               <Route path="/projects/:id" component={SelectedProjectContainer} />
               <Route path="/projects" component={ProjectsContainer} />

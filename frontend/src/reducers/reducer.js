@@ -18,8 +18,9 @@ const reducer = (state = {
             selectedProject: action.payload }
 
         case "ADD_PROJECT":
-            debugger;
-            return {
+debugger;
+            return {...state,
+                projects: {...state.projects}
             }
 
         default: 
