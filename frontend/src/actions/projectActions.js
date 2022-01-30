@@ -56,3 +56,20 @@ export const addGoal = (description, projectId) => {
         .then(payload => dispatch({type: "ADD_GOAL", payload: payload}))
     }
 }
+
+export const addTask = (description, goalId) => {
+    return (dispatch) => {
+        console.log('addtask', description, goalId)
+        return fetch('http://localhost:3000/api/v1/tasks', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ description: description, goal_id: goalId
+            })
+        })
+        .then((res) => res.json())
+        // .then(payload => console.log('goal action: ', payload))
+        .then(payload => dispatch({type: "ADD_GOAL", payload: payload}))
+    }
+}
