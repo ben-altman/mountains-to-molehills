@@ -11,8 +11,9 @@ class Api::V1::GoalsController < ApplicationController
     end
 
     def create
+        # byebug
         project = Project.find_by(id: params[:project_id])
-        goal = project.build(goal_params)
+        goal = project.goals.build(goal_params)
         if goal.save
             render json: goal, status: :accepted
        else

@@ -12,13 +12,15 @@ class GoalsForm extends Component {
 
     handleChange = event => {
         this.setState({
-            project: event.target.value
+            goal: event.target.value
         })
     }
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.props.addGoal(this.state.goal);
+        console.log('form input:', this.state)
+        const projectId = this.props.selectedProject.id;
+        this.props.addGoal(this.state.goal, projectId);
         event.target.reset();
         // Why didnt below work?
         // this.setState({ project: '' })
@@ -26,6 +28,7 @@ class GoalsForm extends Component {
     
 
   render() {
+// debugger;
     return <form onSubmit={(event) => this.handleOnSubmit(event)}>
         <label><b>Add a Goal: </b>
             <input type='text' onChange={ (event) => this.handleChange(event)} />

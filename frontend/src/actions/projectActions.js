@@ -1,6 +1,5 @@
 export const fetchProjects = () => {
     return (dispatch) => {
-    // dispatch({ type: 'LOAD_PROJECTS' });
         fetch("http://localhost:3000/api/v1/projects")
         .then(response => response.json())
         .then(data => dispatch({type: "GET_PROJECTS", payload: data })
@@ -19,43 +18,41 @@ export const addProject = (title) => {
             })
         })
         .then((res) => res.json())
-        // .then(formData => console.log(formData))
         .then(formData => dispatch({type: "ADD_PROJECT", payload: formData}))
     }
 }
-
-// export const getProject = (id) => {
-//     console.log("action", id)
-//     return (dispatch) => {
-//         dispatch({ type: 'GET_PROJECT', id })
-// }}
-
-// export const getProject = (id) => {
-//     return (dispatch) => {
-//         dispatch({ type: "START_ADDING_PROJECT" });
-//         dispatch({ type: 'GET_PROJECT', id })
-// }}
 
 export const getProject = (id) => {
  console.log('HERE', id)
     // debugger;
     return (dispatch) => fetch(`http://localhost:3000/api/v1/projects/${id}`, {method: 'GET'})
         .then(response => response.json())
-        // .then( resp => console.log("actions", resp))
         .then(project => dispatch({type: "GET_PROJECT", payload: project })       
     );
-    // return {type: 'GET_PROJECT', id}
 }
 
 export const deleteProject = (id) => {
-    // return {type: 'DELETE_PROJECT', id}
 
     return (dispatch) => {
         return fetch(`http://localhost:3000/api/v1/projects/${id}`, {method: 'DELETE' })
         .then((res) => res.json())
-        // .then(res => console.log("from action", res))
         .then(payload => dispatch({type: 'DELETE_PROJECT', payload}))
-        
-        // .then((id) => dispatch({type: "DELETE_PROJECT", payload: id}))
+    }
+}
+
+export const addGoal = (description, projectId) => {
+    return (dispatch) => {
+        console.log('addgoal', description, projectId)
+        return fetch('http://localhost:3000/api/v1/goals', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ description: description, project_id: projectId
+            })
+        })
+        .then((res) => res.json())
+        .then(payload => console.log('goal action: ', payload))
+        // .then(formData => dispatch({type: "ADD_GOAL", payload: formData}))
     }
 }
