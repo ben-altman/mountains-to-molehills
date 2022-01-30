@@ -52,7 +52,7 @@ export const addGoal = (description, projectId) => {
             })
         })
         .then((res) => res.json())
-        .then(payload => console.log('goal action: ', payload))
-        // .then(formData => dispatch({type: "ADD_GOAL", payload: formData}))
+        // .then(payload => console.log('goal action: ', payload))
+        .then(payload => dispatch({type: "ADD_GOAL", payload: payload}))
     }
 }

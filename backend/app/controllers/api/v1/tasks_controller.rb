@@ -11,7 +11,7 @@ class Api::V1::TasksController < ApplicationController
 
     def create
         goal = Goal.find_by(id: params[:goal_id])
-        goal = goal.build(task_params)
+        goal = goal.tasks.build(task_params)
         if task.save
             render json: task, status: :accepted
        else

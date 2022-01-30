@@ -47,6 +47,19 @@ const reducer = (state = {
                 // ...state.projects.slice(action.payload + 1)
             }
 
+        case "ADD_GOAL":
+            // debugger;
+            const newGoal = {description: action.payload.description, id: action.payload.id, tasks: []}
+            return {...state,
+                selectedProject: {
+                    ...state.selectedProject,
+                    goals: [
+                        ...state.selectedProject.goals.concat(newGoal)
+                    ]
+                }               
+            }
+
+
         default: 
             return state
     }
