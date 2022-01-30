@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProjectShow from '../components/ProjectShow';
 import { getProject } from '../actions/projectActions';
+import GoalsForm from '../components/GoalsForm';
 
 class SelectedProjectContainer extends Component {
 
@@ -28,6 +29,8 @@ class SelectedProjectContainer extends Component {
         return <div className='card'>
             {/* <ProjectShow selectedProject=/> */}
             <ProjectShow selectedProject={this.props.selectedProject} />
+            <GoalsForm addProject={this.props.addProject} />
+
         </div>
         // if( this.props.selectedProject === true) {return <div className='card'>
         //     <ProjectShow project={this.props.selectedProject} />
