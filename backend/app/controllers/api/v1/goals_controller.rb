@@ -11,7 +11,6 @@ class Api::V1::GoalsController < ApplicationController
     end
 
     def create
-        # byebug
         project = Project.find_by(id: params[:project_id])
         goal = project.goals.build(goal_params)
         if goal.save

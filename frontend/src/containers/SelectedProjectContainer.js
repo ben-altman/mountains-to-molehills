@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProjectShow from '../components/ProjectShow';
-import { getProject, addGoal } from '../actions/projectActions';
+import { getProject, addGoal, addTask } from '../actions/projectActions';
 import GoalsForm from '../components/GoalsForm';
 
 class SelectedProjectContainer extends Component {
@@ -28,7 +28,7 @@ class SelectedProjectContainer extends Component {
         console.log(this.props.selectedProject)
         return <div className='card'>
             {/* <ProjectShow selectedProject=/> */}
-            <ProjectShow selectedProject={this.props.selectedProject} />
+            <ProjectShow selectedProject={this.props.selectedProject} addTask={this.props.addTask}/>
             <GoalsForm addGoal={this.props.addGoal} selectedProject={this.props.selectedProject}/>
 
         </div>
@@ -49,7 +49,8 @@ const mapDispatchToProps = (dispatch) => {
 
     return {
         getProject: id => dispatch(getProject(id)),
-        addGoal: (description, projectId) => dispatch(addGoal(description, projectId))
+        addGoal: (description, projectId) => dispatch(addGoal(description, projectId)),
+        addTask: (description, goalId) => dispatch(addTask(description, goalId))
     };
 };
 

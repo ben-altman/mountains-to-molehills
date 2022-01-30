@@ -69,7 +69,7 @@ export const addTask = (description, goalId) => {
             })
         })
         .then((res) => res.json())
-        // .then(payload => console.log('goal action: ', payload))
-        .then(payload => dispatch({type: "ADD_GOAL", payload: payload}))
+        .then(payload => console.log('goal action: ', payload))
+        // .then(payload => dispatch({type: "ADD_GOAL", payload: payload}))
     }
 }

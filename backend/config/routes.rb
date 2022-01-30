@@ -7,9 +7,8 @@ Rails.application.routes.draw do
         resources :logs
         resources :goals
       end
-      resources :goals do
-        resources :tasks
-      end
+      resources :goals
+      resources :tasks
     end
   end
 end
