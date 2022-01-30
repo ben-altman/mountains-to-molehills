@@ -68,3 +68,5 @@ Once your app is complete, fill out this checklist.
     transform: rotate(360deg);
   }
 } -->
+
+<!-- <Route path="/projects/:id" render={(routerProps) => <SelectedProjectContainer {...routerProps}/>} /> -->

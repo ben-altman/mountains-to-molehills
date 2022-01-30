@@ -6,6 +6,7 @@ class Api::V1::ProjectsController < ApplicationController
     end
 
     def show
+        # byebug
         project = Project.find(params[:id])
         render json: project, include: ['goals', 'goals.tasks', 'logs']
     end
@@ -23,8 +24,10 @@ class Api::V1::ProjectsController < ApplicationController
     end
 
     def destroy
+        projects = Project.all
         project = Project.find(params[:id])
         project.destroy
+        render json: projects, include: ['goals', 'goals.tasks', 'logs']
     end
 
     private

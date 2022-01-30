@@ -24,28 +24,26 @@ export const addProject = (title) => {
     }
 }
 
-// .then(formData => dispatch({
-//     type: 'ADD_PROJECT', payload: formData
-// }))
-
 export const getProject = (id) => {
- 
-    return (dispatch) => fetch(`http://localhost:3000/api/v1/projects/${id}`)
+ console.log('HERE', id)
+    
+    return (dispatch) => fetch(`http://localhost:3000/api/v1/projects/${id}`, {method: 'GET'})
         .then(response => response.json())
+        // .then( resp => console.log("actions", resp))
         .then(project => dispatch({type: "GET_PROJECT", payload: project })       
     );
+    // return {type: 'GET_PROJECT', id}
 }
 
+export const deleteProject = (id) => {
+    // return {type: 'DELETE_PROJECT', id}
 
-// return (dispatch) => {
-//     dispatch({ type: 'LOAD_PROJECTS' });
-//     fetch("http://localhost:3000/api/v1/projects")
-//     .then(response => response.json())
-//     .then(data => dispatch({type: "GET_PROJECTS", payload: data })
-//     );
-// }
-
-// return dispatch({ type: 'LOAD_PROJECTS' }) => fetch("http://localhost:3000/api/v1/projects")
-//     .then(response => response.json())
-//     .then(data => dispatch({type: "GET_PROJECTS", payload: data })
-//     );
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/api/v1/projects/${id}`, {method: 'DELETE' })
+        .then((res) => res.json())
+        // .then(res => console.log("from action", res))
+        .then(payload => dispatch({type: 'DELETE_PROJECT', payload}))
+        
+        // .then((id) => dispatch({type: "DELETE_PROJECT", payload: id}))
+    }
+}

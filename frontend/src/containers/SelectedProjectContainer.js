@@ -5,8 +5,6 @@ import { getProject } from '../actions/projectActions';
 
 export class ProjectsContainer extends Component {
 
-    
-
     componentDidMount() {
         console.log(this.props.match.params)
         const id = this.props.match.params.id
@@ -14,11 +12,20 @@ export class ProjectsContainer extends Component {
         // console.log(this.props.projects);
     }
 
+    // displayLoading = () => {
+    //     console.log('here')
+    //     return !this.props.selectedProject ? <p>loading</p> : 
+    //         <div className='card'>
+    //         <ProjectShow project={this.props.selectedProject} />
+    //         </div> 
+        
+    // }
+
     render() {
-        console.log("selected project:", this.props)
-        return <div className='card'>
+        console.log('here')
+                return <div className='card'>
             <ProjectShow project={this.props.selectedProject} />
-        </div>;
+        </div> 
     }
 }
 

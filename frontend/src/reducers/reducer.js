@@ -1,10 +1,6 @@
 const reducer = (state = {
     projects: [],
-    selectedProject: {
-        // title: "",
-        // goals: [],
-        // logs: []
-    },
+    selectedProject: {},
     logs: []
 }, action) => {
     switch (action.type) {
@@ -13,7 +9,7 @@ const reducer = (state = {
             projects: action.payload }
 
         case "GET_PROJECT":
-            // console.log(action)
+            console.log(action)
             return {...state,
             selectedProject: action.payload }
 
@@ -22,8 +18,15 @@ const reducer = (state = {
             return {...state,
                 projects: [...state.projects, action.payload ]
             }
-            // return Object.assign(projects, action.payload})
-            
+
+        case "DELETE_PROJECT":
+            console.log("action is:", action.payload, state)
+            // const projects = state.projects.filter(project => project.id !==action.id);
+            return {...state,
+            projects: action.payload
+                // ...state.projects.slice(0, action.payload),
+                // ...state.projects.slice(action.payload + 1)
+            }
 
         default: 
             return state
