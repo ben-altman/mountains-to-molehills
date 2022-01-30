@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import ProjectShow from '../components/ProjectShow';
 import { getProject } from '../actions/projectActions';
 
-export class ProjectsContainer extends Component {
+class SelectedProjectContainer extends Component {
 
     componentDidMount() {
-        console.log(this.props.match.params)
+        debugger;
+        console.log("mounting:", this.props.match.params)
         const id = this.props.match.params.id
         this.props.getProject(id);
         // console.log(this.props.projects);
@@ -22,10 +23,15 @@ export class ProjectsContainer extends Component {
     // }
 
     render() {
-        console.log('here')
-                return <div className='card'>
-            <ProjectShow project={this.props.selectedProject} />
-        </div> 
+        // debugger;
+        console.log(this.props.selectedProject)
+        return <div className='card'>
+            {/* <ProjectShow selectedProject=/> */}
+            <ProjectShow getProject={this.props.selectedProject} />
+        </div>
+        // if( this.props.selectedProject === true) {return <div className='card'>
+        //     <ProjectShow project={this.props.selectedProject} />
+        // </div> } else { <h1>Loading</h1>}
     }
 }
 
@@ -36,9 +42,11 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+    // debugger;
+
     return {
         getProject: id => dispatch(getProject(id))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(SelectedProjectContainer);

@@ -1,17 +1,33 @@
 const reducer = (state = {
     projects: [],
     selectedProject: {},
-    logs: []
+    logs: [],
+    requesting: false
 }, action) => {
     switch (action.type) {
         case "GET_PROJECTS":
             return {...state, 
             projects: action.payload }
 
+        case 'START_ADDING_PROJECT':
+            debugger;
+            return {
+                ...state,
+                selectedProject: {},
+                requesting: true,
+            }
+
         case "GET_PROJECT":
-            console.log(action)
+            debugger;
+            // console.log(state.projects.find(project => project.id === action.id))
+            // const project = state.projects.find(project => project.id === action.id);
+            // return {...state,
+            // selectedProject: project}
+            const project = state.projects.find(project => project.id === action.id);
             return {...state,
-            selectedProject: action.payload }
+            selectedProject: project }
+            
+        
 
         case "ADD_PROJECT":
             console.log(action.payload)
