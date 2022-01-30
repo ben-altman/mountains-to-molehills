@@ -11,7 +11,7 @@ class ProjectShow extends Component {
   }
 
   render() {
-    // debugger;
+    debugger;
     const project = this.props.project
     console.log("projectshow", project)
   return <div className="center-card">

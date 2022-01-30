@@ -9,24 +9,27 @@ const reducer = (state = {
             return {...state, 
             projects: action.payload }
 
-        case 'START_ADDING_PROJECT':
-            debugger;
-            return {
-                ...state,
-                selectedProject: {},
-                requesting: true,
-            }
+        // case 'START_ADDING_PROJECT':
+        //     debugger;
+        //     return {
+        //         ...state,
+        //         selectedProject: {},
+        //         requesting: true,
+        //     }
 
         case "GET_PROJECT":
-            debugger;
+            // debugger;
+            // debugger;
             // console.log(state.projects.find(project => project.id === action.id))
             // const project = state.projects.find(project => project.id === action.id);
             // return {...state,
             // selectedProject: project}
-            const project = state.projects.find(project => project.id === action.id);
+
+            // const project = state.projects.find(project => project.id === action.id);
+            // return {...state,
+            // selectedProject: project }
             return {...state,
-            selectedProject: project }
-            
+                selectedProject: action.payload}
         
 
         case "ADD_PROJECT":

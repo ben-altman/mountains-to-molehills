@@ -5,7 +5,7 @@ const ProjectsIndex = (props) => {
         <h2>Current Projects:</h2>
         {props.projects.map(project => (
             <div key={project.id}>
-                <Link to={`/projects/${project.id}`} >
+                <Link to={`/projects/${project.id}`} >                   
                     {/* <h3 onClick={(() => {props.getProject(project.id)})}>{project.title}</h3> */}
                     <h3>{project.title}</h3>
                 </Link>

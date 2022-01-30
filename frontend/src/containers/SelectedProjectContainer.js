@@ -6,7 +6,7 @@ import { getProject } from '../actions/projectActions';
 class SelectedProjectContainer extends Component {
 
     componentDidMount() {
-        debugger;
+        // debugger;
         console.log("mounting:", this.props.match.params)
         const id = this.props.match.params.id
         this.props.getProject(id);
@@ -27,7 +27,7 @@ class SelectedProjectContainer extends Component {
         console.log(this.props.selectedProject)
         return <div className='card'>
             {/* <ProjectShow selectedProject=/> */}
-            <ProjectShow getProject={this.props.selectedProject} />
+            <ProjectShow selectedProject={this.props.selectedProject} />
         </div>
         // if( this.props.selectedProject === true) {return <div className='card'>
         //     <ProjectShow project={this.props.selectedProject} />
