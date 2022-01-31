@@ -15,7 +15,6 @@ const reducer = (state = {
         
 
         case "ADD_PROJECT":
-            // console.log(action.payload)
             return {...state,
                 projects: [...state.projects, action.payload ]
             }
@@ -26,7 +25,6 @@ const reducer = (state = {
             }
 
         case "ADD_GOAL":
-            // debugger;
             const newGoal = {description: action.payload.description, id: action.payload.id, tasks: []}
             return {...state,
                 selectedProject: {
