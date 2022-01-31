@@ -3,44 +3,30 @@ import { connect } from 'react-redux';
 import ProjectShow from '../components/ProjectShow';
 import { getProject, addGoal, addTask } from '../actions/projectActions';
 import GoalsForm from '../components/GoalsForm';
+import GoalsIndex from '../components/GoalsIndex';
 
 class SelectedProjectContainer extends Component {
 
     componentDidMount() {
-        // debugger;
-        console.log("mounting:", this.props.match.params)
         const id = this.props.match.params.id
         this.props.getProject(id);
-        // console.log(this.props.projects);
     }
-
-    // displayLoading = () => {
-    //     console.log('here')
-    //     return !this.props.selectedProject ? <p>loading</p> : 
-    //         <div className='card'>
-    //         <ProjectShow project={this.props.selectedProject} />
-    //         </div> 
-        
-    // }
 
     render() {
         // debugger;
-        console.log(this.props.selectedProject)
+        console.log("spc props",this.props.selectedProject)
         return <div className='card'>
-            {/* <ProjectShow selectedProject=/> */}
             <ProjectShow selectedProject={this.props.selectedProject} addTask={this.props.addTask}/>
+            <GoalsIndex project={this.props.selectedProject} goals={this.props.goals} addTask={this.props.addTask} />
             <GoalsForm addGoal={this.props.addGoal} selectedProject={this.props.selectedProject}/>
-
         </div>
-        // if( this.props.selectedProject === true) {return <div className='card'>
-        //     <ProjectShow project={this.props.selectedProject} />
-        // </div> } else { <h1>Loading</h1>}
     }
 }
 
 const mapStateToProps = (state) => {
     return {
         selectedProject: state.selectedProject,
+        goals: state.selectedProject.goals
     }
 }
 

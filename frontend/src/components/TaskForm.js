@@ -15,7 +15,6 @@ export class TaskForm extends Component {
     
     handleOnSubmit = (event) => {
         event.preventDefault();
-        console.log('form input:', this.state)
         const goalId = this.props.goal.id;
         this.props.addTask(this.state.task, goalId);
         event.target.reset();

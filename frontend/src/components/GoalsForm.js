@@ -18,7 +18,6 @@ class GoalsForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        console.log('form input:', this.state)
         const projectId = this.props.selectedProject.id;
         this.props.addGoal(this.state.goal, projectId);
         event.target.reset();

@@ -9,42 +9,20 @@ const reducer = (state = {
             return {...state, 
             projects: action.payload }
 
-        // case 'START_ADDING_PROJECT':
-        //     debugger;
-        //     return {
-        //         ...state,
-        //         selectedProject: {},
-        //         requesting: true,
-        //     }
-
         case "GET_PROJECT":
-            // debugger;
-            // debugger;
-            // console.log(state.projects.find(project => project.id === action.id))
-            // const project = state.projects.find(project => project.id === action.id);
-            // return {...state,
-            // selectedProject: project}
-
-            // const project = state.projects.find(project => project.id === action.id);
-            // return {...state,
-            // selectedProject: project }
             return {...state,
                 selectedProject: action.payload}
         
 
         case "ADD_PROJECT":
-            console.log(action.payload)
+            // console.log(action.payload)
             return {...state,
                 projects: [...state.projects, action.payload ]
             }
 
         case "DELETE_PROJECT":
-            console.log("action is:", action.payload, state)
-            // const projects = state.projects.filter(project => project.id !==action.id);
             return {...state,
             projects: action.payload
-                // ...state.projects.slice(0, action.payload),
-                // ...state.projects.slice(action.payload + 1)
             }
 
         case "ADD_GOAL":
@@ -58,7 +36,25 @@ const reducer = (state = {
                     ]
                 }               
             }
-
+        
+        case "ADD_TASK":
+            console.log("payload: ", action.payload)
+            const newTask = {description: action.payload.description, id: action.payload.id}
+            const thisGoal = state.selectedProject.goals.find(goal => goal.id === action.payload.goal.id)
+            return {...state,
+                selectedProject: {
+                    ...state.selectedProject,
+                        goals: state.selectedProject.goals.map(goal => {
+                            if(goal.id !== thisGoal.id) {
+                                return goal 
+                            } else {
+                            return {
+                                ...goal,
+                                tasks: goal.tasks.concat(newTask)
+                            }}
+                        })                            
+                }
+            }
 
         default: 
             return state
