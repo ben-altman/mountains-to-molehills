@@ -6,7 +6,7 @@ function GoalsIndex(props) {
   return <div>
       {props.goals?.map((goal) => (
         <div key={goal.id} className="card goal"><h3>{goal.description}</h3>
-        <ul>{goal.tasks.map(task => (<li key={task.id}><span>{task.description}</span></li>))}</ul>
+        <ul>{goal.tasks.map(task => (<li key={task.id}>{task.description}</li>))}</ul>
         <TaskForm goal={goal} addTask={props.addTask}/>
         </div>))}
       </div>

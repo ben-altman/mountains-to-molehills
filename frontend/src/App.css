@@ -67,8 +67,11 @@ h3 {
   vertical-align: middle;
 }
 
-li span {
+li {
   position: relative;
-  left: -35%;
+  /* width: 100px; */
+  text-align: left;
+  padding:0;
+  margin:0;
 }
 
