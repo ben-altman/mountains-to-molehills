@@ -14,3 +14,4 @@ There is much room for growth:
 Adding full CRUD for each model.
 Building out the Log model to create a journal for the user to keep track of progress.
 Making lists of goals and tasks draggable to re-order.
+Setting deadlines for tasks and projects.

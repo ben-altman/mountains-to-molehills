@@ -10,7 +10,7 @@ class GoalsForm extends Component {
       }
     }
 
-    handleChange = event => {
+    handleChange = (event) => {
         this.setState({
             goal: event.target.value
         })
